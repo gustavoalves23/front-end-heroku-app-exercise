@@ -1,9 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 
-require('dotenv').config();
-
-const { API_ENDPOINT } = process.env;
+const API_ENDPOINT = 'https://backend-exercise-1234.herokuapp.com/users';
 
 console.log(API_ENDPOINT);
 
