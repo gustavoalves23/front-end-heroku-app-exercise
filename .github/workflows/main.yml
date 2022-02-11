@@ -17,3 +17,24 @@ jobs:
 
       - name: Executa o lint
         run: npx eslint .
+
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verifica o repositorio Git
+        uses: actions/checkout@v2
+    
+      - name: Instala o node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: instala as dependencias
+        run: npm install
+
+      - name: inicia o live preview
+        uses: sharadcodes/live-preview-action@v1.0
+        with:
+          port: 3000
+          minutes: 10
+          command: "npm start"
